@@ -1,0 +1,97 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "RM8Qw6aypdsaEZ56qDh46NzIveQ=",
+			"path": "ftgo",
+			"revision": "5a75ae2811aa4a9421e4cd23875ea43a6f98f9fc",
+			"revisionTime": "2018-03-31T07:49:45Z"
+		},
+		{
+			"checksumSHA1": "yu0DsOLWTYBQS2uCc8nypYnmxZA=",
+			"path": "ftgo/ftconf",
+			"revision": "5a75ae2811aa4a9421e4cd23875ea43a6f98f9fc",
+			"revisionTime": "2018-03-31T07:49:45Z"
+		},
+		{
+			"checksumSHA1": "yAFmjfjhJJ0VvGIda9AN0K8PXlg=",
+			"path": "ftgo/safeclose",
+			"revision": "5a75ae2811aa4a9421e4cd23875ea43a6f98f9fc",
+			"revisionTime": "2018-03-31T07:49:45Z"
+		},
+		{
+			"checksumSHA1": "QeKwBtN2df+j+4stw3bQJ6yO4EY=",
+			"path": "github.com/gin-contrib/sse",
+			"revision": "22d885f9ecc78bf4ee5d72b937e4bbcdc58e8cae",
+			"revisionTime": "2017-01-09T09:34:21Z"
+		},
+		{
+			"checksumSHA1": "WTQQEiaBbzVyakIaVr8pjJzV55Y=",
+			"path": "github.com/gin-gonic/gin",
+			"revision": "bd4f73af679e7d645f6d0277258fa360eda96f2d",
+			"revisionTime": "2018-05-01T06:24:18Z"
+		},
+		{
+			"checksumSHA1": "lM0o2uMaQ6vv4R/PGCEzg+rISLA=",
+			"path": "github.com/gin-gonic/gin/binding",
+			"revision": "bd4f73af679e7d645f6d0277258fa360eda96f2d",
+			"revisionTime": "2018-05-01T06:24:18Z"
+		},
+		{
+			"checksumSHA1": "woO1qIxIeQ1bcbPSiMfAKk3r4xg=",
+			"path": "github.com/gin-gonic/gin/json",
+			"revision": "bd4f73af679e7d645f6d0277258fa360eda96f2d",
+			"revisionTime": "2018-05-01T06:24:18Z"
+		},
+		{
+			"checksumSHA1": "HsXbmyR0esmIZ1qGsnN9FL6h3/w=",
+			"path": "github.com/gin-gonic/gin/render",
+			"revision": "bd4f73af679e7d645f6d0277258fa360eda96f2d",
+			"revisionTime": "2018-05-01T06:24:18Z"
+		},
+		{
+			"checksumSHA1": "Pyou8mceOASSFxc7GeXZuVdSMi0=",
+			"path": "github.com/golang/protobuf/proto",
+			"revision": "b4deda0973fb4c70b50d226b1af49f3da59f5265",
+			"revisionTime": "2018-04-30T18:52:41Z"
+		},
+		{
+			"checksumSHA1": "bVblvxjXM6xs+yx9CcRtDqINZlo=",
+			"path": "github.com/json-iterator/go",
+			"revision": "2dc0031b26575ddf5dab09ab7795105a05575473",
+			"revisionTime": "2017-08-25T04:53:23Z"
+		},
+		{
+			"checksumSHA1": "w5RcOnfv5YDr3j2bd1YydkPiZx4=",
+			"path": "github.com/mattn/go-isatty",
+			"revision": "6ca4dbf54d38eea1a992b3c722a76a5d1c4cb25c",
+			"revisionTime": "2017-11-07T05:05:31Z"
+		},
+		{
+			"checksumSHA1": "d5ty9+omxFH0EI8uZc58dvnLy6c=",
+			"path": "github.com/ugorji/go/codec",
+			"revision": "f3cacc17c85ecb7f1b6a9e373ee85d1480919868",
+			"revisionTime": "2018-04-07T10:30:00Z"
+		},
+		{
+			"checksumSHA1": "8Jbretc0+UpLILSxcp948TqVRsQ=",
+			"path": "golang.org/x/sys/unix",
+			"revision": "4ff8c001ce4cc464e644b922325097228fce14d8",
+			"revisionTime": "2017-11-24T13:32:17Z"
+		},
+		{
+			"checksumSHA1": "P/k5ZGf0lEBgpKgkwy++F7K1PSg=",
+			"path": "gopkg.in/go-playground/validator.v8",
+			"revision": "5f1438d3fca68893a817e4a66806cea46a9e4ebf",
+			"revisionTime": "2017-07-30T05:02:35Z"
+		},
+		{
+			"checksumSHA1": "ZSWoOPUNRr5+3dhkLK3C4cZAQPk=",
+			"path": "gopkg.in/yaml.v2",
+			"revision": "5420a8b6744d3b0345ab293f6fcba19c978f1183",
+			"revisionTime": "2018-03-28T19:50:20Z"
+		}
+	],
+	"rootPath": "wechat"
+}
