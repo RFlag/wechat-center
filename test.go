@@ -7,5 +7,5 @@ import (
 )
 
 func main() {
-	ftgo.Run(":80", router.Router)
+	ftgo.Run(":8080", router.Router)
 }

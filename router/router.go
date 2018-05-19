@@ -1,13 +1,14 @@
 package router
 
 import (
-	"wechat/controller"
+	"wechat-center/controller"
 
 	"github.com/gin-gonic/gin"
 )
 
 func Router(g *gin.Engine) {
-	// g.ServeHTTP(w http.ResponseWriter, req *http.Request)
-	g.GET("/", controller.CheckServer)
-	g.POST("/", controller.Notice)
+	private(g.Group("/private"))
+
+	g.GET("/wechat/:wechat", controller.CheckServer)
+	g.POST("/wechat/:wechat", controller.Wechat)
 }
