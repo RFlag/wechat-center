@@ -21,26 +21,29 @@ func Notice(toUserName, fromUserName, content string) *entity.ReplyMessage {
 	replyMessage.Content = content
 	return replyMessage
 }
-func GetReplyMessage(toUserName, fromUserName, inviteOpenId string) string {
+func GetReplyMessage(toUserName, fromUserName, inviteOpenId string) (string, error) {
 	accessToken, err := model.GetAccessToken(toUserName) //获取token
 	if err != nil {
-		return ""
+		return "", err
 	}
 	userInfo, err := model.GetUserInfo(accessToken, fromUserName) //获取用户信息
 	if err != nil {
-		return ""
+		return "", err
 	}
 	wechatInfo, err := model.GetWechatInfo(accessToken) //获取微信信息
 	if err != nil {
-		return ""
+		return "", err
 	}
 	var content string
 	if inviteOpenId != "" {
 		inviteUserInfo, err := model.GetUserInfo(accessToken, fromUserName) //获取用户信息
 		if err != nil {
-			return ""
+			return "", err
 		}
-		SendInviteMessage(accessToken, inviteOpenId, userInfo.NickName)
+		err = SendInviteMessage(accessToken, inviteOpenId, userInfo.NickName)
+		if err != nil {
+			return "", err
+		}
 		content = model.Message(userInfo.NickName, inviteUserInfo.NickName, wechatInfo.Total)
 	} else {
 		content = model.Message(userInfo.NickName, "", wechatInfo.Total)
@@ -55,7 +58,7 @@ func GetReplyMessage(toUserName, fromUserName, inviteOpenId string) string {
 		"<Content>" + replyMessage.Content + "</Content>" +
 		"</xml>"
 
-	return reply
+	return reply, nil
 }
 func SendInviteMessage(accessToken, inviteOpenId, nickName string) error {
 	timeNow := time.Now().Format("2006-01-02 15:04:05")

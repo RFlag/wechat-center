@@ -1,6 +1,7 @@
 package controller
 
 import (
+	"log"
 	"wechat-center/model/notice"
 
 	"github.com/gin-gonic/gin"
@@ -15,6 +16,11 @@ func Notice(c *gin.Context) {
 	if err != nil {
 		return
 	}
-	c.Data(200, "application/xml; charset=utf-8", []byte(notice.GetReplyMessage(Param.ToUserName, Param.FromUserName, "")))
+	replyMessage, err := notice.GetReplyMessage(Param.ToUserName, Param.FromUserName, "")
+	if err != nil {
+		log.Println(err)
+		return
+	}
+	c.Data(200, "application/xml; charset=utf-8", []byte(replyMessage))
 
 }

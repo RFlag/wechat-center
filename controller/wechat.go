@@ -71,11 +71,13 @@ func Wechat(c *gin.Context) {
 		return
 	}
 	if Param.Event == "subscribe" { //关注或扫码关注
-		var replyMessage string
 		if Param.EventKey == "" { //关注
 			//model层函数调用
-			replyMessage = notice.GetReplyMessage(Param.ToUserName, Param.FromUserName, "")
-			log.Println("@@@@", replyMessage)
+			replyMessage, err := notice.GetReplyMessage(Param.ToUserName, Param.FromUserName, "")
+			if err != nil {
+				log.Println(err)
+				return
+			}
 			if replyMessage == "" {
 				// 第三方插件
 				for _, url := range callbackUrl["无参数关注"] {
@@ -89,6 +91,7 @@ func Wechat(c *gin.Context) {
 					}
 					err = ftapi.Post(url, Param, &result)
 					if err != nil {
+						log.Println(err)
 						return
 					}
 					c.Data(200, "application/xml; charset=utf-8", []byte(result.Data.Reply))
@@ -102,7 +105,11 @@ func Wechat(c *gin.Context) {
 			scene := strings.Split(Param.EventKey, "qrscene_")
 
 			inviteOpenId := conf.QrCodeParam[scene[1]].OpenId
-			replyMessage = notice.GetReplyMessage(Param.ToUserName, Param.FromUserName, inviteOpenId)
+			replyMessage, err := notice.GetReplyMessage(Param.ToUserName, Param.FromUserName, inviteOpenId)
+			if err != nil {
+				log.Println(err)
+				return
+			}
 			if replyMessage == "" {
 				for _, url := range callbackUrl["参数关注"] {
 					// TODO: 回调 url
@@ -114,6 +121,7 @@ func Wechat(c *gin.Context) {
 					}
 					err = ftapi.Post(url, Param, &result)
 					if err != nil {
+						log.Println(err)
 						return
 					}
 
